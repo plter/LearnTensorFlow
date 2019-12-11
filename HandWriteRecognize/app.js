@@ -92,7 +92,6 @@
 
         recognizeResultDiv.html(`正在预测...`);
 
-        //TODO
         let result = await model.predict(tf.tensor([photoDataArray]));
         result.print();
         let firstResultMaxNumIndex = result.argMax(1);
@@ -128,7 +127,7 @@
                     onEpochEnd(epoch, logs) {
                         console.log(epoch, logs);
                         if (logs) {
-                            trainStatusDiv.html(`<span style="color: blue;">Step: ${epoch},${JSON.stringify(logs)}</span>`);
+                            trainStatusDiv.html(`<span style="color: blue;">Step: ${epoch}<br>Loss: ${logs.loss}</span>`);
                         }
                     }
                 }
