@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="cat.jpg" id="img" width="200">
+<script src="node_modules/@tensorflow/tfjs/dist/tf.min.js"></script>
+<script src="node_modules/@tensorflow-models/mobilenet/dist/mobilenet.min.js"></script>
+
+<script>
+    (async function () {
+        const img = document.getElementById('img');
+
+        // Load the model.
+        const model = await mobilenet.load();
+
+        // Classify the image.
+        const predictions = await model.classify(img);
+
+        console.log('Predictions: ');
+        console.log(predictions);
+    })();
+</script>
+</body>
+</html>
