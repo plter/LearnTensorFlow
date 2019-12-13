@@ -1,0 +1,8 @@
+{
+  "name": "webcam_object_detection",
+  "version": "1.0.0",
+  "dependencies": {
+    "@tensorflow-models/coco-ssd": "^2.0.1",
+    "@tensorflow/tfjs": "^1.4.0"
+  }
+}

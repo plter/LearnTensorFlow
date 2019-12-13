@@ -1,0 +1,7 @@
+{
+  "name": "object_detection",
+  "version": "1.0.0",
+  "dependencies": {
+    "@tensorflow-models/coco-ssd": "^2.0.1"
+  }
+}
