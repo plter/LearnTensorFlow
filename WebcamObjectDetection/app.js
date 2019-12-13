@@ -18,8 +18,9 @@
     });
     let canvas = document.querySelector("canvas");
     let context2d = canvas.getContext("2d");
-    context2d.strokeStyle = "red";
-    context2d.lineWidth = 3;
+    context2d.strokeStyle = "blue";
+    context2d.font = "18pt courier";
+    context2d.fillStyle = "blue";
 
     function renderCanvas() {
         context2d.clearRect(0, 0, WIDTH, HEIGHT);
@@ -28,8 +29,10 @@
         if (!detecting) {
             detecting = true;
             model.detect(video).then(predictions => {
+                // console.log(predictions);
                 predictions.forEach(r => {
                     context2d.strokeRect(r.bbox[0], r.bbox[1], r.bbox[2], r.bbox[3]);
+                    context2d.fillText(r.class + "," + r.score.toFixed(2), r.bbox[0], r.bbox[1]);
                 });
                 detecting = false;
             }).catch(reason => {
