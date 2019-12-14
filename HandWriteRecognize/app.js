@@ -8,8 +8,8 @@
     let recognizeResultDiv = $("#result");
     let model = tf.sequential({
         layers: [
-            tf.layers.dense({inputShape: [784], units: 32, activation: 'relu'}),
-            tf.layers.dense({units: 10, activation: 'softmax'}),
+            // tf.layers.dense({inputShape: [784], units: 32, activation: 'relu'}),
+            tf.layers.dense({units: 10, inputShape: [784], activation: 'softmax'}),
         ]
     });
 
@@ -122,7 +122,7 @@
         await model.fit(
             tf.tensor([photoDataArray]),
             tf.tensor([target.arraySync()]), {
-                epochs: 100,
+                epochs: 50,
                 callbacks: {
                     onEpochEnd(epoch, logs) {
                         console.log(epoch, logs);

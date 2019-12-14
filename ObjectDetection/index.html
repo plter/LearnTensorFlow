@@ -11,7 +11,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
 
 <!-- Replace this with your image. Make sure CORS settings allow reading the image! -->
-<img id="img" src="cat.jpg"/>
+<img id="img" src="images/cat.jpg" width="400"/>
 
 <!-- Place your code in the script tag below. You can also use an external .js file -->
 <script>
@@ -21,7 +21,9 @@
     const img = document.getElementById('img');
 
     // Load the model.
-    cocoSsd.load().then(model => {
+    cocoSsd.load({
+        modelUrl: "models/ssdlite_mobilenet_v2/model.json"
+    }).then(model => {
         // detect objects in the image.
         model.detect(img).then(predictions => {
             console.log('Predictions: ', predictions);
