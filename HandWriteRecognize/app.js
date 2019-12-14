@@ -8,8 +8,9 @@
     let recognizeResultDiv = $("#result");
     let model = tf.sequential({
         layers: [
-            // tf.layers.dense({inputShape: [784], units: 32, activation: 'relu'}),
-            tf.layers.dense({units: 10, inputShape: [784], activation: 'softmax'}),
+            tf.layers.inputLayer({inputShape: [784]}),
+            tf.layers.dense({units: 10}),
+            tf.layers.softmax()
         ]
     });
 
