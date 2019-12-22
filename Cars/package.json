@@ -1,0 +1,31 @@
+{
+  "name": "cars",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^7.1.5",
+    "electron-rebuild": "^1.8.8"
+  },
+  "dependencies": {
+    "@tensorflow-models/coco-ssd": "^2.0.1",
+    "@tensorflow/tfjs": "^1.4.0",
+    "@tensorflow/tfjs-node": "^1.4.0",
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.4.1",
+    "vue": "^2.6.11"
+  }
+}
